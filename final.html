@@ -1,0 +1,31 @@
+<!-- Run the HTML for an explanation on how the code works. -->
+<!DOCTYPE html>
+    <html>
+        <head>
+            <title> Masala Marsala Tech Final Code </title>
+            <meta charset="utf-8">
+            <style>
+                body {
+                    font-family: 'Calibri', sans-serif;
+                }
+            </style>
+        </head>
+        <body>
+            <h1 id="changeWord"> wordChanges </h1>
+            <p> As you can see, the word given has the following definition given by the API: </p>
+            <p id="changeDefinition"> definitionHere </p>
+            <p> What we did here was request an API, and change "wordChanges" with the word given by the API. We also added a definition as well. </p>
+            <p> Code by <a href="https://tech.masalamarsala.com">https://tech.masalamarsala.com</a></p>
+            <script>
+                const wordGiven = 'Code'
+                    fetch('https://api.dictionaryapi.dev/api/v2/entries/en/' + wordGiven)
+                    .then(response => response.json())
+                    .then(data => {
+                        console.log(data); // this will output the JSON data as an object
+                        document.getElementById('changeWord').innerHTML = '"' + data[0].word + '"' + " Definition";
+                        document.getElementById('changeDefinition').innerHTML = data[0].meanings[0].definitions[0].definition;
+                    })
+                    .catch(error => console.error(error));
+            </script>
+        </body>
+    </html>
