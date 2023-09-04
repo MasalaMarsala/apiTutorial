@@ -3,4 +3,4 @@ If you encounter a CORS error when running your file, add the following code bet
 <meta http-equiv="Access-Control-Allow-Origin" content="https://dictionaryapi.dev"/>
 
 This will allow your browser to access the specific API we are using in this tutorial.
-You can https://dictionaryapi.dev to * if you are fine with your webpage accessing all websites, or replace content with the API of your choice.
+You can change "https://dictionaryapi.dev" to "*" to give your webpage to all websites. Just note that this may create an open door to your website.
